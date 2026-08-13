@@ -31,7 +31,6 @@ import {
 } from 'lucide-react';
 import profile from '../public/profile.jpg';
 import Link from 'next/link';
-import LinkedInSection from '@/components/LinkedInSection';
 
 const GITHUB_USER = 'pirroot';
 
@@ -136,28 +135,6 @@ const PROJECTS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: 'رضا کریمی',
-    role: 'کارفرما',
-    text: 'سینا رو به عنوان یک توسعه‌دهنده Next.js با دید قوی در SEO می‌شناسم. کدهای فرانت‌اند تمیز و قابل نگهداری نوشتند و با بهینه‌سازی‌های هوشمندانه به بهبود رتبه سایت در گوگل کمک کردند.',
-  },
-  {
-    name: 'راسا احمدی',
-    role: 'همکار',
-    text: 'درک عمیق ایشان از Next.js و توانایی پیاده‌سازی سریع UI چشمگیر بود. تسلط بر SEO و ادغام آن در فرآیند توسعه، نتایج پروژه را فراتر از انتظار کرد. تعهد و تحویل به‌موقع عالی.',
-  },
-  {
-    name: 'عارف',
-    role: 'همکار سابق (۳ سال)',
-    text: 'پیشرفت خیلی خوبی در حوزه JavaScript داشتند و هم از نظر فنی و هم تعهد کاری فردی قابل اعتماد و توانمند هستند. برای موفقیت‌شان آرزوی بهترین‌ها را دارم.',
-  },
-  {
-    name: 'OD976IZ9781',
-    role: 'کارفرما',
-    text: 'آقای پیرزاده خیلی انسان با شرافتی هستند. توی مدت زمان کم پروژه من رو به اتمام رسوندند. توی ۲ روز وقت دادم ولی توی ۵ ساعت جمع کرد. دمت گرم مرد.',
-  },
-];
 
 const SKILL_TAGS = [
   'Next.js',
@@ -171,11 +148,7 @@ const SKILL_TAGS = [
   'SEO',
 ];
 
-const EDUCATION = {
-  degree: 'مهندسی کامپیوتر',
-  uni: 'دانشگاه تهران',
-  period: '۱۳۹۹ — ۱۴۰۳',
-};
+
 
 const CONTACT = {
   phone: '۰۹۳۶۴۷۳۳۵۸۳',
@@ -221,7 +194,7 @@ function useGithubStats(username: string) {
         const repoRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
         const repos = await repoRes.json();
         const stars = Array.isArray(repos)
-          ? repos.reduce((sum: number, r: any) => sum + (r.stargazers_count || 0), 0)
+          ? repos.reduce((sum: number, r) => sum + (r.stargazers_count || 0), 0)
           : 0;
         if (!cancelled) {
           setStats({
@@ -331,7 +304,6 @@ function ParticleCanvas() {
 /*  LinkedIn Posts (Mock / Ready for API)                              */
 /* ------------------------------------------------------------------ */
 
-
 /* ------------------------------------------------------------------ */
 /*  UI atoms                                                            */
 /* ------------------------------------------------------------------ */
@@ -347,7 +319,7 @@ export function Eyebrow({ index, children }: { index: string; children: React.Re
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1  text-[11px] tracking-wide text-zinc-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-200">
+    <span className="rounded-full border border-white/10 bg-white/3 px-3 py-1  text-[11px] tracking-wide text-zinc-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-200">
       {children}
     </span>
   );
@@ -375,7 +347,7 @@ export default function Home() {
 
   return (
     <main
-      className={`$ relative min-h-screen overflow-x-clip bg-[#030508] font-[var(--font-body)] text-zinc-200 selection:bg-cyan-300/20 selection:text-cyan-100`}
+      className={`$ relative min-h-screen overflow-x-clip bg-[#030508] font-(--font-body) text-zinc-200 selection:bg-cyan-300/20 selection:text-cyan-100`}
     >
       <style jsx global>{`
         .font-display {
@@ -426,14 +398,14 @@ export default function Home() {
       <div className="bg-noise pointer-events-none fixed inset-0 z-0" />
 
       {/* Glow orbs */}
-      <div className="pointer-events-none fixed left-1/2 top-[-10%] z-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-400/[0.08] blur-[160px]" />
-      <div className="pointer-events-none fixed bottom-[-10%] right-[-10%] z-0 h-[480px] w-[480px] rounded-full bg-violet-500/[0.08] blur-[160px]" />
-      <div className="pointer-events-none fixed left-[-5%] top-[30%] z-0 h-[400px] w-[400px] rounded-full bg-amber-500/[0.05] blur-[140px]" />
+      <div className="pointer-events-none fixed left-1/2 top-[-10%] z-0 h-150 w-150 -translate-x-1/2 rounded-full bg-cyan-400/8 blur-[160px]" />
+      <div className="pointer-events-none fixed bottom-[-10%] right-[-10%] z-0 h-120 w-120 rounded-full bg-violet-500/8 blur-[160px]" />
+      <div className="pointer-events-none fixed left-[-5%] top-[30%] z-0 h-100 w-100 rounded-full bg-amber-500/5 blur-[140px]" />
 
       {/* Scan line tied to scroll progress */}
       <motion.div
         style={{ top: scanY }}
-        className="pointer-events-none fixed left-0 z-40 h-px w-full bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent"
+        className="pointer-events-none fixed left-0 z-40 h-px w-full bg-linear-to-r from-transparent via-cyan-300/50 to-transparent"
       />
 
       {/* Corner brackets — HUD frame */}
