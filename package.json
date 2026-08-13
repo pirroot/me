@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
-    "lint": "eslint",
-    "deploy": "npm run build && npx wrangler deploy --skip-verification"
+    "lint": "next lint",
+    "deploy": "npm run build && npx wrangler deploy --assets=./out"
   },
   "dependencies": {
     "framer-motion": "^13.1.0",
