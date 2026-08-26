@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import raviFont from '@/public/font';
+import NeedTop from '@/components/proflow/ui/NeedTop';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -55,7 +58,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={`scroll-smooth ${raviFont.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">{children}</body>
+      <NeedTop />
+      <body className="min-h-screen flex flex-col antialiased">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -118,50 +118,9 @@ export default function Home() {
   }
 
   return (
-    <main dir="ltr" className="min-h-screen w-full bg-[#0b0d14] text-white overflow-x-hidden">
-      {/* Top Bar - Fully Responsive */}
-      <header className="sticky top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between border-b border-white/[0.06] bg-[#0b0d14]/90 backdrop-blur-xl">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#6366f1] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/20">
-            <svg
-              className="w-4 h-4 sm:w-5 sm:h-5 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-          <div>
-            <h1 className="text-base sm:text-lg font-bold tracking-tight leading-none">Trainer</h1>
-            <p className="text-[10px] sm:text-[11px] text-[#64748b] mt-0.5 font-medium hidden xs:block">
-              Growth Tracker
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3fb950] animate-pulse" />
-            <span className="text-xs text-[#94a3b8] font-mono">{TODAY}</span>
-          </div>
-          <div className="text-[10px] sm:text-xs text-[#64748b] font-mono sm:hidden">
-            {TODAY.slice(5)}
-          </div>
-          <div
-            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold transition-all duration-300 ${saving ? 'bg-[#8B5CF6] text-white shadow-lg shadow-[#8B5CF6]/25' : 'bg-white/[0.03] text-[#64748b] border border-white/[0.06]'}`}
-          >
-            {saving ? 'Saving' : 'Saved'}
-          </div>
-        </div>
-      </header>
-
+    <main dir="ltr" className="min-h-screen w-full text-white overflow-x-hidden">
       {/* Main Content - Responsive Grid */}
-      <main className="px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-6">
+      <main className="px-3 mt-20 sm:px-4 md:px-6 py-3 sm:py-4 md:py-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6">
           {/* Left Column - Mobile First: Progress & Stats */}
           <div className="lg:col-span-3 space-y-3 sm:space-y-4">
