@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { Download, StickerIcon } from 'lucide-react';
 import { SKILL_TAGS } from '@/lib/proflow_data';
 import GithubStack from './GithubStack';
+import profile from '@/public/profile.webp';
+import Link from 'next/link';
 
 export default async function Hero() {
   return (
@@ -42,15 +44,15 @@ export default async function Hero() {
           <GithubStack />
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="https://pirroot.site/avater_user_image/resume.pdf"
+            <Link
+              href={'https://github.com/pirroot/pirroot/blob/main/resume.pdf'}
               download
               className="inline-flex items-center gap-2 rounded-lg bg-cyan-300/10 px-5 py-2.5  text-xs uppercase tracking-wider text-cyan-300 transition-all hover:bg-cyan-300/20 hover:text-cyan-200"
             >
               <Download className="h-4 w-4" />
               دانلود رزومه PDF
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://karlancer.com/profile/1241439"
               target="_blank"
               rel="noopener noreferrer"
@@ -58,7 +60,7 @@ export default async function Hero() {
             >
               <StickerIcon className="h-4 w-4" />
               پروفایل کارلنسر
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -68,7 +70,7 @@ export default async function Hero() {
             {/* Placeholder — replace src with your photo */}
 
             <Image
-              src={'https://pirroot.site/avater_user_image/profile.jpg'}
+              src={profile}
               alt="سینا پیرزاده پروفایل"
               width={1000}
               height={1000}

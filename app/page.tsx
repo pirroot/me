@@ -1,11 +1,10 @@
-import NeedTop from '@/components/proflow/ui/NeedTop';
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/proflow/Hero';
-import Stack from '@/components/proflow/Stack';
-import Experience from '@/components/proflow/Experience';
 import Contacts from '@/components/proflow/Contacts';
+import Experience from '@/components/proflow/Experience';
+import Hero from '@/components/proflow/Hero';
 import Projects from '@/components/proflow/Projects';
+import Stack from '@/components/proflow/Stack';
+import NeedTop from '@/components/proflow/ui/NeedTop';
 
 export default function Home() {
   return (
@@ -17,6 +16,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Contacts />
+        <Footer />
       </div>
     </main>
   );

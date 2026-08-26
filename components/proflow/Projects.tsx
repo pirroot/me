@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Code2 } from 'lucide-react';
 import { PROJECTS } from '@/lib/proflow_data';
 import Link from 'next/link';
+import project_img from '@/public/img1.webp';
 
 export default function Projects() {
   return (
@@ -17,7 +18,13 @@ export default function Projects() {
               className="group rounded-xl border border-white/10 bg-white/2 p-5 transition-colors hover:border-cyan-300/20 hover:bg-white/4"
             >
               {p.image && (
-                <Image alt={p.title} src={p.image} width={300} height={300} className="object-cover rounded-2xl mb-2" />
+                <Image
+                  alt={p.title}
+                  src={project_img}
+                  width={300}
+                  height={300}
+                  className="object-cover rounded-2xl mb-2"
+                />
               )}
               <div className="mb-3 flex items-center justify-between">
                 <Code2 className="h-5 w-5 text-cyan-300/60" />
