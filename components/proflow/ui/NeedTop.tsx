@@ -9,7 +9,6 @@ export default function NeedTop() {
   return (
     <>
       {/* Ambient grid + glows */}
-      <div className="bg-grid pointer-events-none fixed inset-0 z-0" />
       <div className="bg-noise pointer-events-none fixed inset-0 z-0" />
 
       {/* Glow orbs */}

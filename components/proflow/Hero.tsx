@@ -74,7 +74,7 @@ export default async function Hero() {
               alt="سینا پیرزاده پروفایل"
               width={1000}
               height={1000}
-              className="h-full w-full object-cover "
+              className="h-full w-full object-cover"
             />
           </div>
           {/* Decorative ring */}
