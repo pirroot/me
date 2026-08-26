@@ -4,7 +4,7 @@ import { ArrowUpRight, Mail, Phone } from 'lucide-react';
 export default function Contacts() {
   return (
     <section className="mb-32">
-      <div className="mb-6 flex items-center gap-3  text-[11px] uppercase tracking-[0.35em] text-cyan-300/70">
+      <div className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-cyan-300/70">
         ارتباط با من
       </div>
 
@@ -15,7 +15,7 @@ export default function Contacts() {
         >
           <Phone className="h-5 w-5 text-cyan-300" />
           <div>
-            <div className=" text-[10px] uppercase tracking-wider text-zinc-500">تماس</div>
+            <div className="text-[10px] uppercase tracking-wider text-zinc-500">تماس</div>
             <div className="mt-0.5 text-md text-zinc-100">{CONTACT.phone}</div>
           </div>
         </a>
@@ -25,7 +25,7 @@ export default function Contacts() {
         >
           <Mail className="h-5 w-5 text-cyan-300" />
           <div>
-            <div className=" text-[10px] uppercase tracking-wider text-zinc-500">ایمیل</div>
+            <div className="text-[10px] uppercase tracking-wider text-zinc-500">ایمیل</div>
             <div className="mt-0.5 text-md text-zinc-100">{CONTACT.email}</div>
           </div>
         </a>
@@ -43,7 +43,7 @@ export default function Contacts() {
             <span className="flex items-center gap-3">
               <Icon className="h-4 w-4 text-cyan-300" />
               <span className="font-display text-md text-zinc-100">{label}</span>
-              <span className=" text-xs text-zinc-500">{handle}</span>
+              <span className="text-xs text-zinc-500">{handle}</span>
             </span>
             <ArrowUpRight className="h-4 w-4 text-zinc-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan-300" />
           </a>

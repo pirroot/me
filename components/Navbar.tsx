@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-1.5  lg:top-3 z-30 flex items-center justify-between px-6 py-4   uppercase tracking-[0.2em] text-zinc-500 sm:px-10">
+    <header className="fixed inset-x-0 top-1.5 lg:top-3 z-30 flex items-center justify-between px-6 py-4 uppercase tracking-[0.2em] text-zinc-500 sm:px-10">
       <Link href={'/'} className="text-zinc-300">
         pirroot
       </Link>

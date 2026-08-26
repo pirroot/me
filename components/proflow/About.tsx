@@ -4,7 +4,7 @@ import { Circle, Mail, MapPin, Phone } from 'lucide-react';
 export default function About() {
   return (
     <section className="mb-32">
-      <div className="mb-6 flex items-center gap-3  text-[11px] uppercase tracking-[0.35em] text-cyan-300/70">
+      <div className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-cyan-300/70">
         درباره من
       </div>
       <div className="grid gap-2 sm:grid-cols-2 sm:gap-x-10">
@@ -13,7 +13,7 @@ export default function About() {
             key={line}
             className="flex items-start gap-3 border-b border-white/5 py-3 text-md text-zinc-300"
           >
-            <span className="mt-0.5  text-cyan-300/60">{'>'}</span>
+            <span className="mt-0.5 text-cyan-300/60">{'>'}</span>
             {line}
           </div>
         ))}

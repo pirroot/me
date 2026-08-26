@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Download, StickerIcon } from 'lucide-react';
+import { Download, Sticker } from 'lucide-react';
 import { SKILL_TAGS } from '@/lib/proflow_data';
 import GithubStack from './GithubStack';
 import profile from '@/public/profile.webp';
@@ -11,7 +11,7 @@ export default async function Hero() {
       <div className="flex flex-col-reverse justify-center mx-auto items-start gap-10 lg:flex-row lg:items-center lg:gap-16">
         {/* Text */}
         <div className="flex-1">
-          <p className="mb-4  text-xs uppercase tracking-[0.35em] text-cyan-300/70"></p>
+          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-cyan-300/70"></p>
 
           <h1 className="font-display text-5xl leading-[0.95] tracking-tight text-zinc-50 sm:text-7xl">
             سینا
@@ -20,7 +20,7 @@ export default async function Hero() {
             <span className="cursor-blink text-cyan-300">_</span>
           </h1>
 
-          <p className="mt-6  text-md uppercase tracking-[0.25em] text-zinc-400">
+          <p className="mt-6 text-md uppercase tracking-[0.25em] text-zinc-400">
             Full Stack Web Developer · Next.js · NestJS · TypeScript
           </p>
 
@@ -33,7 +33,7 @@ export default async function Hero() {
           <div className="mt-10 flex flex-wrap gap-3">
             {SKILL_TAGS.map((t) => (
               <span
-                className="rounded-full border border-white/10 bg-white/3 px-3 py-1  text-[11px] tracking-wide text-zinc-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-200"
+                className="rounded-full border border-white/10 bg-white/3 px-3 py-1 text-[11px] tracking-wide text-zinc-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-200"
                 key={t}
               >
                 {t}
@@ -47,7 +47,7 @@ export default async function Hero() {
             <Link
               href={'https://github.com/pirroot/pirroot/blob/main/resume.pdf'}
               download
-              className="inline-flex items-center gap-2 rounded-lg bg-cyan-300/10 px-5 py-2.5  text-xs uppercase tracking-wider text-cyan-300 transition-all hover:bg-cyan-300/20 hover:text-cyan-200"
+              className="inline-flex items-center gap-2 rounded-lg bg-cyan-300/10 px-5 py-2.5 text-xs uppercase tracking-wider text-cyan-300 transition-all hover:bg-cyan-300/20 hover:text-cyan-200"
             >
               <Download className="h-4 w-4" />
               دانلود رزومه PDF
@@ -56,9 +56,9 @@ export default async function Hero() {
               href="https://karlancer.com/profile/1241439"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-5 py-2.5  text-xs uppercase tracking-wider text-zinc-300 transition-all hover:border-cyan-300/40 hover:text-cyan-200"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-5 py-2.5 text-xs uppercase tracking-wider text-zinc-300 transition-all hover:border-cyan-300/40 hover:text-cyan-200"
             >
-              <StickerIcon className="h-4 w-4" />
+              <Sticker className="h-4 w-4" />
               پروفایل کارلنسر
             </Link>
           </div>
@@ -67,13 +67,12 @@ export default async function Hero() {
         {/* Profile Image Placeholder */}
         <div className="relative shrink-0">
           <div className="relative h-64 w-64 overflow-hidden rounded-2xl border border-white/10 bg-white/3 sm:h-80 sm:w-80">
-            {/* Placeholder — replace src with your photo */}
-
             <Image
               src={profile}
               alt="سینا پیرزاده پروفایل"
               width={1000}
               height={1000}
+              priority
               className="h-full w-full object-cover"
             />
           </div>

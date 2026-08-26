@@ -39,6 +39,5 @@ export function dateAdd(dateStr: string, delta: number): string {
 }
 
 export function toFaDigits(n: number | string): string {
-  const fa = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  return String(n).replace(/\d/g, (c) => fa[+c]);
+  return String(n).replace(/\d/g, (c) => c);
 }

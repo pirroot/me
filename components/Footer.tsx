@@ -9,10 +9,10 @@ export default function Footer() {
       </blockquote>
 
       <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-        <p className=" text-[11px] uppercase tracking-[0.25em] text-zinc-600">
+        <p className="text-[11px] uppercase tracking-[0.25em] text-zinc-600">
           © {new Date().getFullYear()} سینا پیرزاده — ساخته‌شده با Next.js
         </p>
-        <div className="flex items-center gap-1  text-[10px] text-zinc-700">
+        <div className="flex items-center gap-1 text-[10px] text-zinc-700">
           <ChevronLeft className="h-3 w-3" />
           طراحی و توسعه توسط سینا پیرزاده
         </div>

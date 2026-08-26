@@ -108,7 +108,7 @@ export default function Home() {
 
   if (!loaded) {
     return (
-      <div className="h-screen w-full flex items-center justify-center bg-[#0b0d14]">
+      <div className="h-screen  w-full flex items-center justify-center bg-[#0b0d14]">
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-2 border-[#8B5CF6] border-t-transparent rounded-full animate-spin" />
           <span className="text-sm text-[#94a3b8] font-medium tracking-wide">Loading...</span>
@@ -118,9 +118,9 @@ export default function Home() {
   }
 
   return (
-    <main dir="ltr" className="min-h-screen w-full text-white overflow-x-hidden">
+    <main dir="ltr" className="font-mono min-h-screen w-full text-white overflow-x-hidden">
       {/* Main Content - Responsive Grid */}
-      <main className="px-3 mt-20 sm:px-4 md:px-6 py-3 sm:py-4 md:py-6">
+      <div className="px-3 mt-20 sm:px-4 md:px-6 py-3 sm:py-4 md:py-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6">
           {/* Left Column - Mobile First: Progress & Stats */}
           <div className="lg:col-span-3 space-y-3 sm:space-y-4">
@@ -424,7 +424,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </main>
+      </div>
     </main>
   );
 }
