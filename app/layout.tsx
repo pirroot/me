@@ -3,7 +3,6 @@ import './globals.css';
 import raviFont from '@/public/font';
 import NeedTop from '@/components/proflow/ui/NeedTop';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pirroot.site'),
@@ -21,12 +20,29 @@ export const metadata: Metadata = {
     'React',
     'TypeScript',
     'JavaScript',
+    'برنامه‌نویس',
+    'توسعه‌دهنده وب',
   ],
   authors: [{ name: 'سینا پیرزاده', url: 'https://pirroot.site' }],
   creator: 'سینا پیرزاده',
+  publisher: 'سینا پیرزاده',
+
+  verification: {
+    google: 'VPXy0Ny3_5gff7w1FY-sBLYTD4rl1PB_wCk-AWW8Vsw',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
+  alternates: {
+    canonical: 'https://pirroot.site',
+  },
+
   openGraph: {
     title: 'سینا پیرزاده | Front-End Developer',
-    description: 'پورتفولیو شخصی سینا پیرزاده، توسعه‌دهنده Front-End و Full-Stack.',
+    description:
+      'پورتفولیو شخصی سینا پیرزاده، توسعه‌دهنده Front-End و Full-Stack با تمرکز بر Next.js.',
     url: 'https://pirroot.site',
     siteName: 'سینا پیرزاده',
     locale: 'fa_IR',
@@ -36,7 +52,7 @@ export const metadata: Metadata = {
         url: '/profile.webp',
         width: 1200,
         height: 630,
-        alt: 'سینا پیرزاده',
+        alt: 'سینا پیرزاده - توسعه‌دهنده Front-End',
       },
     ],
   },
