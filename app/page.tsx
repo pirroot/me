@@ -1,5 +1,4 @@
 import Footer from '@/components/Footer';
-import About from '@/components/proflow/About';
 import Contacts from '@/components/proflow/Contacts';
 import Experience from '@/components/proflow/Experience';
 import Hero from '@/components/proflow/Hero';
@@ -13,7 +12,6 @@ export default function Home() {
       <NeedTop />
       <div className="relative z-10 mx-auto w-full max-w-5xl flex-1 px-6 pb-32 pt-32 sm:px-10 sm:pt-40">
         <Hero />
-        <About />
         <Stack />
         <Experience />
         <Projects />

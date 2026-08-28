@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar';
 export const metadata: Metadata = {
   metadataBase: new URL('https://pirroot.site'),
   title: {
-    default: 'سینا پیرزاده | Front-End Developer',
+    default: 'سینا پیرزاده',
     template: '%s | سینا پیرزاده',
   },
   description:
@@ -93,7 +93,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={`scroll-smooth ${raviFont.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <body className="min-h-screen flex flex-col antialiased bg-[#030508] text-zinc-200 relative">
         <NeedTop />
         <Navbar />
         <main className="flex-1">{children}</main>
