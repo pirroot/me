@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import raviFont from '@/public/font';
-import NeedTop from '@/components/proflow/ui/NeedTop';
-import Navbar from '@/components/Navbar';
+import raviFont from '../public/font';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pirroot.site'),
@@ -93,10 +91,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={`scroll-smooth ${raviFont.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased bg-[#030508] text-zinc-200 relative">
-        <NeedTop />
-        <Navbar />
-        <main className="flex-1">{children}</main>
+      <body className="min-h-screen flex flex-col antialiased bg-[#0B1210] text-[#EDF3EF] relative">
+        {children}
       </body>
     </html>
   );
