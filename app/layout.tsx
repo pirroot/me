@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import raviFont from '../public/font';
+import MusicPlayer from './MusicPlayer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pirroot.site'),
@@ -94,6 +95,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased bg-[#0B1210] text-[#EDF3EF] relative">
         {children}
       </body>
+      <MusicPlayer />
     </html>
   );
 }
