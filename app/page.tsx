@@ -158,7 +158,7 @@ export default function Page() {
           style={{ animationDelay: '-4s' }}
         />
         <div
-          className="glow-gold anim-drift absolute bottom-[-8rem] right-1/3 h-72 w-72 rounded-full blur-3xl"
+          className="glow-gold anim-drift absolute -bottom-32 right-1/3 h-72 w-72 rounded-full blur-3xl"
           style={{ animationDelay: '-8s' }}
         />
         <div
@@ -224,7 +224,7 @@ export default function Page() {
               </span>
             </p>
 
-            <p className="mt-5 max-w-[34rem] text-[0.95rem] leading-8 text-[#C4D3CC]">
+            <p className="mt-5 max-w-136 text-[0.95rem] leading-8 text-[#C4D3CC]">
               وب‌اپلیکیشن‌ها و فروشگاه‌های اینترنتی را با Next.js و NestJS می‌سازم. کدی می‌نویسم که
               هم سریع بار می‌شود، هم برای موتورهای جستجو خواناست، هم بعد از ماه‌ها هنوز قابل نگهداری
               و توسعه بماند.
@@ -275,7 +275,7 @@ export default function Page() {
 
         {/* Profile: arch portrait + orbit */}
 <div className="order-1 perspective-distant md:order-2">
-  <div className="relative mx-auto flex h-[22rem]  w-full items-center justify-center sm:h-[28rem]">
+  <div className="relative mx-auto flex h-88  w-full items-center justify-center sm:h-112">
     {/* نور رنگی پشت */}
     <div
       aria-hidden
@@ -301,7 +301,7 @@ export default function Page() {
     </div>
 
     {/* قاب قوسی عکس */}
-    <div className="card-3d anim-float relative h-72 w-56  rounded-2xl bg-linear-to-b from-[#E9B44C]/70 via-[#EDF3EF]/10 to-[#7FDBB6]/70 p-0.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] sm:h-[22rem] sm:w-64">
+    <div className="card-3d anim-float relative h-72 w-56  rounded-2xl bg-linear-to-b from-[#E9B44C]/70 via-[#EDF3EF]/10 to-[#7FDBB6]/70 p-0.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] sm:h-88 sm:w-64">
       <div className="group relative h-full w-full  overflow-hidden rounded-2xl bg-[#121C19]">
         <Image
           src={profile_img}
@@ -363,8 +363,8 @@ export default function Page() {
 
         {/* ── Skills marquee ── */}
         <section aria-label="مهارت‌ها" className="space-y-3 py-4">
-          <div className="flex overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-            <div className="flex w-max shrink-0 gap-3 pl-3 [animation:marquee_26s_linear_infinite]">
+          <div className="flex overflow-hidden mask-[linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
+            <div className="flex w-max shrink-0 gap-3 pl-3 animate-[marquee_26s_linear_infinite]">
               {[...stack, ...stack].map((s, i) => (
                 <span
                   key={i}
@@ -375,15 +375,15 @@ export default function Page() {
               ))}
             </div>
           </div>
-          <div className="flex overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-            <div className="flex w-max shrink-0 gap-3 pl-3 [animation:marqueeRev_30s_linear_infinite]">
+          <div className="flex overflow-hidden mask-[linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
+            <div className="flex w-max shrink-0 gap-3 pl-3 animate-[marqueeRev_30s_linear_infinite]">
               {[...stack]
                 .reverse()
                 .concat([...stack].reverse())
                 .map((s, i) => (
                   <span
                     key={i}
-                    className="whitespace-nowrap rounded-xl border border-[#7FDBB6]/20 bg-[#7FDBB6]/[0.06] px-5 py-2.5 text-sm font-semibold text-[#7FDBB6]"
+                    className="whitespace-nowrap rounded-xl border border-[#7FDBB6]/20 bg-[#7FDBB6]/6 px-5 py-2.5 text-sm font-semibold text-[#7FDBB6]"
                   >
                     {s}
                   </span>
