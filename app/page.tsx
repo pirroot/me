@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import profile_img from '@/public/profile.webp';
-import Link from 'next/link';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -274,32 +273,92 @@ export default function Page() {
             </div>
           </div>
 
-          {/* 3D terminal */}
-          <div className="order-1 perspective-distant md:order-2">
-            <div className="relative h-72 sm:h-100">
-              <div className="card-3d-back anim-float-back absolute inset-x-5 top-7 h-full rounded-xl border border-[#EDF3EF]/10 bg-[#101815]/80" />
-              <div className="card-3d anim-float absolute inset-0 flex flex-col overflow-hidden rounded-xl border border-[#EDF3EF]/10 bg-[#121C19] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)]">
-                <div className="flex items-center gap-1.5 border-b border-[#EDF3EF]/10 bg-[#0F1714] px-4 py-2.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#E9765C]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#E9B44C]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#7FDBB6]" />
-                  <span className="mr-2 text-[11px] text-[#7C948B]">profile.ts — zsh</span>
-                </div>
+        {/* Profile: arch portrait + orbit */}
+<div className="order-1 perspective-distant md:order-2">
+  <div className="relative mx-auto flex h-[22rem]  w-full items-center justify-center sm:h-[28rem]">
+    {/* نور رنگی پشت */}
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(233,180,76,0.22),transparent_50%),radial-gradient(circle_at_75%_80%,rgba(127,219,182,0.20),transparent_50%)] blur-2xl"
+    />
 
-                {/* wrapper با ارتفاع مشخص و relative، چون fill به این نیاز دارد */}
-                <div className="relative flex-1">
-                  <Image
-                    src={profile_img}
-                    alt="پروفایل سینا پیرزاده"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 480px"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
+    {/* حلقهٔ مداری بیرونی */}
+    <div
+      aria-hidden
+      className="absolute aspect-square h-[92%] animate-spin rounded-full border border-dashed border-[#E9B44C]/30"
+      style={{ animationDuration: '50s' }}
+    >
+      <span className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-[#E9B44C] shadow-[0_0_14px_#E9B44C]" />
+    </div>
+
+    {/* حلقهٔ مداری داخلی (برعکس) */}
+    <div
+      aria-hidden
+      className="absolute aspect-square h-[76%] animate-spin rounded-full border border-[#7FDBB6]/20"
+      style={{ animationDuration: '35s', animationDirection: 'reverse' }}
+    >
+      <span className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-[#7FDBB6] shadow-[0_0_14px_#7FDBB6]" />
+    </div>
+
+    {/* قاب قوسی عکس */}
+    <div className="card-3d anim-float relative h-72 w-56  rounded-2xl bg-linear-to-b from-[#E9B44C]/70 via-[#EDF3EF]/10 to-[#7FDBB6]/70 p-0.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] sm:h-[22rem] sm:w-64">
+      <div className="group relative h-full w-full  overflow-hidden rounded-2xl bg-[#121C19]">
+        <Image
+          src={profile_img}
+          alt="پروفایل سینا پیرزاده"
+          fill
+          sizes="(max-width: 768px) 224px, 256px"
+          className="object-cover object-top rounded-2xl transition duration-700 group-hover:scale-105"
+          priority
+        />
+        {/* تینت و وینیت */}
+        <div className="absolute inset-0 bg-[#7FDBB6]/10 mix-blend-soft-light" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0B1210]/80 via-transparent to-transparent" />
+
+        {/* پلاک نام */}
+        <div className="absolute inset-x-4 bottom-4 rounded-xl border border-[#EDF3EF]/10 bg-[#0B1210]/55 px-3 py-2 text-center backdrop-blur-md">
+          <div className="text-sm font-bold text-[#EDF3EF]">سینا پیرزاده</div>
+          <div className="text-[11px] text-[#9FB6AE]" dir="ltr">
+            Full-Stack Developer
           </div>
+        </div>
+      </div>
+    </div>
+
+    {/* چیپ‌های شناور */}
+    <span
+      className="absolute left-0 top-10 rounded-xl border border-[#E9B44C]/30 bg-[#0B1210]/70 px-3.5 py-2 text-xs font-semibold text-[#E9B44C] shadow-lg backdrop-blur-md sm:left-2"
+      style={{ animation: 'drift 7s ease-in-out infinite' }}
+      dir="ltr"
+    >
+      Next.js
+    </span>
+
+    <span
+      className="absolute right-0 top-24 rounded-xl border border-[#7FDBB6]/30 bg-[#0B1210]/70 px-3.5 py-2 text-xs font-semibold text-[#7FDBB6] shadow-lg backdrop-blur-md sm:right-2"
+      style={{ animation: 'drift 8s ease-in-out 0.8s infinite' }}
+      dir="ltr"
+    >
+      NestJS
+    </span>
+
+    <span
+      className="absolute bottom-24 left-0 rounded-xl border border-[#EDF3EF]/15 bg-[#0B1210]/70 px-3.5 py-2 text-xs font-semibold text-[#EDF3EF] shadow-lg backdrop-blur-md sm:left-2"
+      style={{ animation: 'drift 9s ease-in-out 1.6s infinite' }}
+      dir="ltr"
+    >
+      TypeScript
+    </span>
+
+    <div
+      className="absolute bottom-8 right-0 rounded-xl border border-[#E9B44C]/30 bg-[#0B1210]/70 px-3.5 py-2 text-center shadow-lg backdrop-blur-md sm:right-2"
+      style={{ animation: 'drift 7.5s ease-in-out 2.2s infinite' }}
+    >
+      <div className="text-lg font-black leading-none text-[#E9B44C]">+۷</div>
+      <div className="mt-1 text-[10px] text-[#9FB6AE]">سال تجربه</div>
+    </div>
+  </div>
+</div>
         </section>
 
         {/* ── Skills marquee ── */}
@@ -450,7 +509,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── Contact ── */}
         {/* ── Contact ── */}
         <section id="contact" className="relative py-14 md:py-20">
           <h2 className="flex items-center gap-2 text-sm font-bold text-[#E9B44C]">
