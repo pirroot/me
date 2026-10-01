@@ -336,3 +336,240 @@ html {
     height: 14px;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+::selection {
+  background: #e9b44c;
+  color: #0b1210;
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1210;
+}
+::-webkit-scrollbar-thumb {
+  background: #22332d;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e9b44c;
+}
+
+@keyframes mq {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes mq-rev {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+@keyframes blink-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes blink-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+@keyframes ring-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(34px, -26px) scale(1.07);
+  }
+  66% {
+    transform: translate(-24px, 20px) scale(0.96);
+  }
+}
+
+.anim-drift {
+  animation: drift 15s ease-in-out infinite;
+}
+.anim-float {
+  animation: float-y 6.5s ease-in-out infinite;
+}
+.fade-item {
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.term-line {
+  animation: fade-up 0.45s ease both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-on {
+  opacity: 1;
+  transform: none;
+}
+
+.glow-gold {
+  background: radial-gradient(circle, rgba(233, 180, 76, 0.16), transparent 70%);
+}
+.glow-mint {
+  background: radial-gradient(circle, rgba(127, 219, 182, 0.14), transparent 70%);
+}
+
+.nlink {
+  position: relative;
+}
+.nlink::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  height: 1.5px;
+  width: 100%;
+  background: #e9b44c;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nlink:hover::after {
+  transform: scaleX(1);
+}
+
+.p-card {
+  will-change: transform;
+}
+.p-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    340px circle at var(--shx, 50%) var(--shy, 50%),
+    rgba(233, 180, 76, 0.13),
+    transparent 65%
+  );
+}
+.p-card:hover::after {
+  opacity: 1;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
+}
+
+#cursor-dot,
+#cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 9999px;
+  opacity: 0;
+}
+#cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #e9b44c;
+}
+#cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(233, 180, 76, 0.55);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    border-color 0.25s ease;
+}
+#cursor-ring.big {
+  width: 54px;
+  height: 54px;
+  border-color: rgba(127, 219, 182, 0.75);
+}
+@media (hover: none), (pointer: coarse) {
+  #cursor-dot,
+  #cursor-ring {
+    display: none;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a,
+  button,
+  label {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
