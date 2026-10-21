@@ -1,7 +1,7 @@
+import raviFont from '@/lib/fonts';
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import raviFont from '../public/font';
-
+/* ═══════════════════════ Metadata (SEO) ═══════════════════════ */
 export const metadata: Metadata = {
   metadataBase: new URL('https://pirroot.site'),
   title: {
@@ -73,6 +73,7 @@ export const metadata: Metadata = {
   },
 };
 
+/* ═══════════════════════ Viewport ═══════════════════════ */
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -84,6 +85,7 @@ export const viewport: Viewport = {
   ],
 };
 
+/* ═══════════════════════ Root Layout ═══════════════════════ */
 export default function RootLayout({
   children,
 }: Readonly<{
