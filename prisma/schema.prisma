@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/* ─────────────── Admin user ─────────────── */
+model Admin {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/* ─────────────── Portfolio content ─────────────── */
+model Project {
+  id        String   @id @default(cuid())
+  order     Int      @default(0)
+  title     String
+  desc      String
+  stack     String   @default("")
+  href      String   @default("#")
+  cat       String   @default("shop") // shop | app
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Experience {
+  id        String   @id @default(cuid())
+  order     Int      @default(0)
+  company   String
+  role      String
+  period    String
+  desc      String
+  tags      String   @default("[]") // JSON array of strings
+  current   Boolean  @default(false)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Social {
+  id      String  @id @default(cuid())
+  order   Int     @default(0)
+  name    String
+  handle  String
+  href    String
+  iconKey String  @default("github")
+  visible Boolean @default(true)
+}
+
+/* ─────────────── Site settings (key/value) ─────────────── */
+model Setting {
+  key   String @id
+  value String
+}
+
+/* ─────────────── Contact-form inbox ─────────────── */
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String?
+  phone     String?
+  subject   String?
+  body      String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
