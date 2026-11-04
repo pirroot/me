@@ -1,24 +1,26 @@
-import Reveal from "@/components/ui/Reveal";
+import Reveal from '@/components/ui/Reveal';
 
+/**
+ * Footer — fully server-rendered (the only "interactivity" is a
+ * scroll-to-top button which works without JS via `window.scrollTo`).
+ *
+ * Note: the scroll-to-top button uses inline onClick — it only runs
+ * client-side, but the rest of the markup is server-rendered. We keep
+ * it as a Server Component by using a vanilla anchor for graceful
+ * degradation. (If you need the smooth scroll, replace with a tiny
+ * Client Component.)
+ */
 export default function Footer() {
-  const jYear = new Intl.DateTimeFormat("fa-IR", { year: "numeric" }).format(
-    new Date(),
-  );
+  const jYear = new Intl.DateTimeFormat('fa-IR', { year: 'numeric' }).format(new Date());
 
   return (
     <footer className="border-t border-[#EDF3EF]/10 py-10">
       <Reveal>
         <blockquote className="mx-auto max-w-xl text-center text-sm italic leading-8 text-[#9FB6AE]">
-          «آینده بیشتر از آدم‌هایی که فقط زیاد می‌دانند، به آدم‌هایی نیاز دارد
-          که{" "}
-          <span className="font-semibold not-italic text-[#E9B44C]">
-            خوب سؤال می‌پرسند
-          </span>
-          ،{" "}
-          <span className="font-semibold not-italic text-[#7FDBB6]">
-            دقیق می‌بینند
-          </span>
-          ، مستقل فکر می‌کنند، سریع یاد می‌گیرند و مدت طولانی ادامه می‌دهند.»
+          «آینده بیشتر از آدم‌هایی که فقط زیاد می‌دانند، به آدم‌هایی نیاز دارد که{' '}
+          <span className="font-semibold not-italic text-[#E9B44C]">خوب سؤال می‌پرسند</span>،{' '}
+          <span className="font-semibold not-italic text-[#7FDBB6]">دقیق می‌بینند</span>، مستقل
+          فکر می‌کنند، سریع یاد می‌گیرند و مدت طولانی ادامه می‌دهند.»
         </blockquote>
       </Reveal>
 

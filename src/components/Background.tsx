@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 /**
  * Client-only ambient layer:
@@ -19,9 +19,7 @@ export default function Background() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const fine = window.matchMedia(
-      "(hover: hover) and (pointer: fine)",
-    ).matches;
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const root = document.documentElement;
 
     /* ── Scroll progress ── */
@@ -32,7 +30,7 @@ export default function Background() {
       }
     };
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     /* ── Cursor follow (lerp for the ring, instant for the dot) ── */
     let mx = window.innerWidth / 2;
@@ -45,7 +43,7 @@ export default function Background() {
       rx += (mx - rx) * 0.16;
       ry += (my - ry) * 0.16;
       if (ringRef.current) {
-        ringRef.current.style.opacity = "1";
+        ringRef.current.style.opacity = '1';
         ringRef.current.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
       }
       raf = requestAnimationFrame(loop);
@@ -54,36 +52,34 @@ export default function Background() {
     const onMove = (e: MouseEvent) => {
       mx = e.clientX;
       my = e.clientY;
-      root.style.setProperty("--mx", `${mx}px`);
-      root.style.setProperty("--my", `${my}px`);
+      root.style.setProperty('--mx', `${mx}px`);
+      root.style.setProperty('--my', `${my}px`);
       if (dotRef.current) {
-        dotRef.current.style.opacity = "1";
+        dotRef.current.style.opacity = '1';
         dotRef.current.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
       }
       if (fine && !raf) raf = requestAnimationFrame(loop);
     };
 
     const onOver = (e: MouseEvent) => {
-      const hit = (e.target as HTMLElement | null)?.closest?.(
-        "a, button, label",
-      );
-      ringRef.current?.classList.toggle("big", !!hit);
+      const hit = (e.target as HTMLElement | null)?.closest?.('a, button, label');
+      ringRef.current?.classList.toggle('big', !!hit);
     };
 
     const onLeave = () => {
-      if (dotRef.current) dotRef.current.style.opacity = "0";
-      if (ringRef.current) ringRef.current.style.opacity = "0";
+      if (dotRef.current) dotRef.current.style.opacity = '0';
+      if (ringRef.current) ringRef.current.style.opacity = '0';
     };
 
-    window.addEventListener("mousemove", onMove);
-    document.addEventListener("mouseover", onOver);
-    document.documentElement.addEventListener("mouseleave", onLeave);
+    window.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseover', onOver);
+    document.documentElement.addEventListener('mouseleave', onLeave);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("mousemove", onMove);
-      document.removeEventListener("mouseover", onOver);
-      document.documentElement.removeEventListener("mouseleave", onLeave);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseover', onOver);
+      document.documentElement.removeEventListener('mouseleave', onLeave);
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);
@@ -108,22 +104,22 @@ export default function Background() {
         <div className="anim-drift glow-gold absolute -right-24 -top-24 h-80 w-80 rounded-full blur-3xl" />
         <div
           className="anim-drift glow-mint absolute -left-28 top-1/3 h-96 w-96 rounded-full blur-3xl"
-          style={{ animationDelay: "-4s" }}
+          style={{ animationDelay: '-4s' }}
         />
         <div
           className="anim-drift glow-gold absolute -bottom-32 right-1/3 h-72 w-72 rounded-full blur-3xl"
-          style={{ animationDelay: "-8s" }}
+          style={{ animationDelay: '-8s' }}
         />
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
-              "linear-gradient(#EDF3EF 1px, transparent 1px), linear-gradient(90deg, #EDF3EF 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
+              'linear-gradient(#EDF3EF 1px, transparent 1px), linear-gradient(90deg, #EDF3EF 1px, transparent 1px)',
+            backgroundSize: '44px 44px',
             maskImage:
-              "radial-gradient(ellipse 80% 60% at 50% 0%, black 25%, transparent 75%)",
+              'radial-gradient(ellipse 80% 60% at 50% 0%, black 25%, transparent 75%)',
             WebkitMaskImage:
-              "radial-gradient(ellipse 80% 60% at 50% 0%, black 25%, transparent 75%)",
+              'radial-gradient(ellipse 80% 60% at 50% 0%, black 25%, transparent 75%)',
           }}
         />
         {/* اسپات‌لایت دنبال‌کنندهٔ موس */}
@@ -131,7 +127,7 @@ export default function Background() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(560px circle at var(--mx, 70%) var(--my, 25%), rgba(233,180,76,.06), transparent 70%)",
+              'radial-gradient(560px circle at var(--mx, 70%) var(--my, 25%), rgba(233,180,76,.06), transparent 70%)',
           }}
         />
       </div>

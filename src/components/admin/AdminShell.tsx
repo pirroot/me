@@ -74,7 +74,7 @@ export default function AdminShell({
   );
 
   return (
-    <div className="flex min-h-screen bg-[#0B1210]">
+    <div data-native-cursor className="flex min-h-screen bg-[#0B1210]">
       {/* سایدبار دسکتاپ */}
       <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-s border-[#EDF3EF]/10 bg-[#0E1714] p-4 md:flex">
         <Link href="/admin" className="mb-6 flex items-center gap-2 px-2 pt-2">

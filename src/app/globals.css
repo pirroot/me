@@ -640,14 +640,22 @@ html {
     display: none;
   }
 }
-/* @media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   body,
   a,
   button,
   label {
     cursor: none;
   }
-} */
+}
+
+/* ── پنل ادمین: موس معمولی (کرسر سفارشی فقط برای سایت اصلی است) ── */
+[data-native-cursor],
+[data-native-cursor] a,
+[data-native-cursor] button,
+[data-native-cursor] label {
+  cursor: auto;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
